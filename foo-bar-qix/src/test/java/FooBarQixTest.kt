@@ -1,55 +1,57 @@
 import main.java.compute
+import main.java.getPrefix
+import main.java.getSuffix
 import org.assertj.core.api.Assertions
 import org.junit.Test
 
 /**
  * Created by zenika on 08/02/18.
  */
-class KataTest {
+class FooBarQixTest {
 
     @Test
-    fun works_with_1() {
+    fun computeWorksWith1() {
         Assertions.assertThat(compute(1)).isEqualTo("1")
     }
 
     @Test
-    fun works_with_3() {
+    fun computeWorksWith3() {
         Assertions.assertThat(compute(3)).isEqualTo("foofoo")
     }
 
     @Test
-    fun works_with_9() {
+    fun computeWorksWith9() {
         Assertions.assertThat(compute(9)).isEqualTo("foo")
     }
 
     @Test
-    fun works_with_5() {
+    fun computeWorksWith5() {
         Assertions.assertThat(compute(5)).isEqualTo("barbar")
     }
 
     @Test
-    fun works_with_15() {
+    fun computeWorksWith15() {
         Assertions.assertThat(compute(15)).isEqualTo("foobarbar")
     }
 
 
     @Test
-    fun works_with_10() {
+    fun computeWorksWith10() {
         Assertions.assertThat(compute(10)).isEqualTo("bar*")
     }
 
     @Test
-    fun works_with_7 () {
+    fun computeWorksWith7() {
         Assertions.assertThat(compute(7)).isEqualTo("qixqix")
     }
 
     @Test
-    fun works_with_101 () {
+    fun computeWorksWith101() {
         Assertions.assertThat(compute(101)).isEqualTo("1*1")
     }
 
     @Test
-    fun works_with_105() {
+    fun computeWorksWith105() {
         Assertions.assertThat(compute(105)).isEqualTo("foobarqix*bar")
     }
 }
