@@ -1,7 +1,7 @@
 ---
-title: "KataNumbersInWords"
+title: "NumbersInWords"
 draft: false
-date: "2013-12-28T16:14:00"
+date: "2017-02-15T12:15:00"
 aliases:
   - "/KataNumbersInWords"
 
