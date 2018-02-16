@@ -31,6 +31,6 @@ class NumberInWordsTest {
 
     @Test
     fun `assert 21 dollars`() {
-       // Assertions.assertThat(convert(21.0)).isEqualTo("twenty one dollars")
+       Assertions.assertThat(convert(21.0)).isEqualTo("twenty one dollars")
     }
 }
