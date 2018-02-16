@@ -2,7 +2,7 @@ package main.java
 
 val numbers = hashMapOf(1 to "one", 2 to "two", 3 to "three", 4 to "four", 5 to "five", 6 to "six", 10 to "ten", 20 to "twenty")
 
-fun convertIntPart(number: Int): String  {
+fun convertIntPart(number: Int, suffix: String): String  {
     val digit = number % 10
     val dozen = number - digit
 
@@ -16,13 +16,19 @@ fun convertIntPart(number: Int): String  {
 }
 
 fun convertDecimalPart(number: Double): Int {
-    return (number - number.toInt()) * 100
+    return ((number - number.toInt()) * 100).toInt()
 }
 
 fun convert(number: Double): String {
-    val intPart = convertIntPart(number.toInt())
+    val intPart = convertIntPart(number.toInt(), getSuffix(number))
 
-    return intPart
+    val decimalDigits = convertDecimalPart(number)
+
+    if (decimalDigits == 0) {
+        return intPart
+    }
+
+    return intPart + " and " + convertIntPart(decimalDigits, "cents")
 }
 
 fun getSuffix(number: Double) = "dollar".takeIf { number <= 1 } ?: "dollars"
