@@ -6,18 +6,13 @@ fun convertIntPart(number: Int): String  {
     val digit = number % 10
     val dozen = number - digit
 
-    var returned: String = ""
+    var returned = mutableListOf<String>()
 
-    if (dozen > 0){
+    if (dozen > 0) returned.add(numbers.getOrDefault(dozen, ""))
 
-        returned += numbers.get(dozen)
+    if (digit > 0) returned.add(numbers.getOrDefault(digit, ""))
 
-        if (digit > 0) returned += " "
-    }
-
-    if (digit > 0) returned += numbers.get(digit)
-
-    return "${returned} ${getSuffix(number.toDouble())}"
+    return "${returned.fold("") { acc, cur -> acc+cur+" "} }${getSuffix(number.toDouble())}"
 }
 fun convert(number: Double): String {
     return convertIntPart(number.toInt())
