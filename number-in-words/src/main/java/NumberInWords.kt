@@ -24,7 +24,6 @@ fun convert(number: Double): String {
 
     val decimalDigits = convertDecimalPart(number)
 
-    print(decimalDigits)
     if (decimalDigits == 0) {
         return intPart
     }
