@@ -1,3 +1,5 @@
+import main.java.convert
+import org.assertj.core.api.Assertions
 import org.junit.Test
 import kotlin.test.fail
 
@@ -6,9 +8,15 @@ import kotlin.test.fail
  */
 class NumberInWordsTest {
 
+
     @Test
-    fun containsTests() {
-        fail("Test me !")
+    fun oneDollar() {
+        Assertions.assertThat(convert(1.0)).isEqualTo("one dollar");
+    }
+
+    @Test
+    fun twoDollars() {
+        Assertions.assertThat(convert(2.0)).isEqualTo("two dollars");
     }
 
 
