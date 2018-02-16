@@ -12,10 +12,17 @@ fun convertIntPart(number: Int): String  {
 
     if (digit > 0) returned.add(numbers.getOrDefault(digit, ""))
 
-    return "${returned.fold("") { acc, cur -> acc+cur+" "} }${getSuffix(number.toDouble())}"
+    return "${returned.reduce { acc, cur -> acc.plus(" ").plus(cur)} } ${getSuffix(number.toDouble())}"
 }
+
+fun convertDecimalPart(number: Double): Int {
+    return (number - number.toInt()) * 100
+}
+
 fun convert(number: Double): String {
-    return convertIntPart(number.toInt())
+    val intPart = convertIntPart(number.toInt())
+
+    return intPart
 }
 
 fun getSuffix(number: Double) = "dollar".takeIf { number <= 1 } ?: "dollars"

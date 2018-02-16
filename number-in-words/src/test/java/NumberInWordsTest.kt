@@ -35,4 +35,10 @@ class NumberInWordsTest {
     }
 
 
+    @Test
+    fun `assert 21 dollars and 20 cents`() {
+        Assertions.assertThat(convert(21.2)).isEqualTo("twenty one dollars and twenty cents")
+    }
+
+
 }
