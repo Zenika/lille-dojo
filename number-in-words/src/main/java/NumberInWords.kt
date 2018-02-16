@@ -16,7 +16,7 @@ fun convertIntPart(number: Int, suffix: (n: Double) -> String): String  {
 }
 
 fun convertDecimalPart(number: Double): Int {
-    return ((number - number.toInt()) * 100).toInt()
+    return number.toString().split(".").getOrElse(1){"0"}.toInt() * 10
 }
 
 fun convert(number: Double): String {
@@ -24,6 +24,7 @@ fun convert(number: Double): String {
 
     val decimalDigits = convertDecimalPart(number)
 
+    print(decimalDigits)
     if (decimalDigits == 0) {
         return intPart
     }
